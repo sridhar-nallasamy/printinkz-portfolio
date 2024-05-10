@@ -1,0 +1,20 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: ${SERVICE}
+  annotations:
+    run.googleapis.com/description: 'development version of the app'
+spec:
+  template:
+    metadata:
+      name: ${REVISION_NAME}
+      annotations:
+        autoscaling.knative.dev/maxScale: '10'
+    spec:
+      containerConcurrency: 80
+      serviceAccountName: ${SA}
+      containers:
+      - image: ${IMAGE}
+  traffic:
+  - percent: 100
+    latestRevision: true

@@ -1,0 +1,65 @@
+name: Deployment Workflow
+run-name: ${{ github.ref_name }} Deployment 🚀
+on:
+  workflow_call:
+    inputs:
+      ref:
+        type: string
+        required: true
+        description: The tag or SHA checkout
+      artifact-rep:
+        type: string
+        required: true
+        description: Artifactory Repository Name
+      run-service-name:
+        type: string
+        required: true
+        description: Cloud Run Service Name
+    secrets:
+      wif-provider:
+        required: true
+        description: Workload Identity Federtion Provider
+      wif-sa:
+        required: true
+        description: Workload Identity Federation Service Account
+jobs:
+  Deployment-Workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: GCP Auth
+        id: gcp-auth
+        uses: 'google-github-actions/auth@v2'
+        with:
+          workload_identity_provider: ${{ secrets.wif-provider }}
+          service_account: ${{ secrets.wif-sa }}
+          token_format: 'access_token'
+      - name: Docker Auth
+        id: docker-auth
+        uses: docker/login-action@v3
+        with:
+          username: 'oauth2accesstoken'
+          password: '${{ steps.gcp-auth.outputs.access_token }}'
+          registry: '${{ vars.CLOUD_REGION }}-docker.pkg.dev'
+      - name: Build and push App image
+        id: build-image
+        uses: docker/build-push-action@v5
+        with:
+          push: true
+          tags: ${{ vars.CLOUD_REGION }}-docker.pkg.dev/${{ vars.PROJECT_ID }}/${{ inputs.artifact-rep }}/${{ inputs.run-service-name }}/${{ inputs.ref }}
+      - name: Service Declaration
+        run: |
+          export IMAGE='${{ vars.CLOUD_REGION }}-docker.pkg.dev/${{ vars.PROJECT_ID }}/${{ inputs.artifact-rep }}/${{ inputs.run-service-name }}/${{ inputs.ref }}'
+          export SERVICE=${{ inputs.run-service-name }}
+          export SA=${{ secrets.wif-sa }}
+          export REVISION_NAME='${{ inputs.run-service-name }}-${{ github.run_id }}'
+          envsubst < ./.github/services/cloud-run-metadata.yml > service.yml
+      - name: Cloud Run Deploy
+        id: deploy
+        uses: google-github-actions/deploy-cloudrun@v2
+        with:
+          metadata: service.yml
+          region: us-central1
+      - name: App URL
+        run: echo "✅ Deployed at 🚀 ${{ steps.deploy.outputs.url }}"

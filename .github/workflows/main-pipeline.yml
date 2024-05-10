@@ -1,0 +1,18 @@
+name: Main Pipeline
+run-name: ${{ github.actor }} triggered the Main Pipeline 🚀
+on:
+  push:
+    branches: [main]
+jobs:
+  Main-Pipeline:
+    uses: ./.github/workflows/deployment-jobs.yml
+    permissions:
+      id-token: write
+      contents: read
+    with:
+      ref: ${{ github.ref }}
+      artifact-rep: ${{ vars.ARTIFACT_REPO_MAIN }}
+      run-service-name: 'main-app'
+    secrets:
+      wif-provider: ${{ secrets.WIF_PROVIDER_MAIN }}
+      wif-sa: ${{ secrets.WIF_SA_MAIN }}

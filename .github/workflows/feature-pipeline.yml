@@ -1,0 +1,18 @@
+name: Feature Pipeline
+run-name: ${{ github.actor }} triggered the Feature Pipeline 🚀
+on:
+  push:
+    branches: [feature/**]
+jobs:
+  Feature-Pipeline:
+    uses: ./.github/workflows/deployment-jobs.yml
+    permissions:
+      id-token: write
+      contents: read
+    with:
+      ref: ${{ github.ref }}
+      artifact-rep: ${{ vars.ARTIFACT_REPO_FEATURE }}
+      run-service-name: 'feature-app'
+    secrets:
+      wif-provider: ${{ secrets.WIF_PROVIDER_FEATURE }}
+      wif-sa: ${{ secrets.WIF_SA_FEATURE }}
