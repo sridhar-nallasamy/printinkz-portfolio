@@ -3,6 +3,6 @@
 
 echo '🙂 Please be patient, this may take sometime...⏳'
 
-yarn lint-staged -v
+npx lint-staged -v
 
 echo '🎉 All checks passed ✅, committing your code...✨🚀🏄‍♂️🍻'
