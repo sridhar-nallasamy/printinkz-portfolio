@@ -2,7 +2,13 @@
   "name": "printinkz-portfolio",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "author": "Sridhar Nallasamy <nsridharbtech@gmail.com> (https://sridhar-nallasamy.vercel.app/)",
+  "homepage": "https://www.printinkz.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sridhar-nallasamy/printinkz-portfolio"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -20,6 +26,7 @@
     "eslint-config-next": "14.2.3",
     "eslint-config-prettier": "^9.1.0",
     "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "postcss": "^8",
     "prettier": "^3.2.5",
     "tailwindcss": "^3.4.1",
