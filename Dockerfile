@@ -21,11 +21,11 @@ COPY . .
 ENV NEXT_TELEMETRY_DISABLED 1
 
 # Receiving Arguments
-ARG CLIENT_VAR
-ARG SERVER_VAR
+# ARG CLIENT_VAR
+# ARG SERVER_VAR
 # Setting up the Environment variables
-ENV NEXT_PUBLIC_CLIENT_VAR=${CLIENT_VAR}
-ENV SERVER_VAR=${SERVER_VAR}
+# ENV NEXT_PUBLIC_CLIENT_VAR=${CLIENT_VAR}
+# ENV SERVER_VAR=${SERVER_VAR}
 
 # Building the app
 RUN yarn run build
@@ -41,7 +41,7 @@ ENV NEXT_TELEMETRY_DISABLED 1
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-COPY --from=builder /app/public ./public
+# COPY --from=builder /app/public ./public
 
 # Set the correct permission for prerender cache
 RUN mkdir .next
