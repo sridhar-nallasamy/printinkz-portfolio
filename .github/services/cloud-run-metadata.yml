@@ -14,7 +14,7 @@ spec:
       containerConcurrency: 80
       serviceAccountName: ${SA}
       containers:
-      - image: ${IMAGE}
+        - image: ${IMAGE}
   traffic:
-  - percent: 100
-    latestRevision: true
+    - percent: 100
+      latestRevision: true
