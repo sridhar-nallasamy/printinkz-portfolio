@@ -12,11 +12,11 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     images:
-      'https://storage.googleapis.com/multimedia.printinkz.com/printinkz.svg',
+      'https://storage.googleapis.com/multimedia.printinkz.com/printinkz.png',
   },
   twitter: {
     images:
-      'https://storage.googleapis.com/multimedia.printinkz.com/printinkz.svg',
+      'https://storage.googleapis.com/multimedia.printinkz.com/printinkz.png',
   },
 };
 
