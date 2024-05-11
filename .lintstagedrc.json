@@ -1,4 +1,0 @@
-{
-  "*": ["yarn format-write", "yarn format-check"],
-  "**/*.{ts,tsx}": ["yarn lint"]
-}

@@ -3,6 +3,19 @@
 
 echo '🙂 Please be patient, this may take sometime...⏳'
 
-yarn lint-staged -v
+echo '👷🏻⚒️ Styling your code before committing...'
+yarn format-write
+
+echo '👮🏻🔎 Checking Styles in your code before committing...'
+yarn format-check
+
+echo '👮🏻🚨 Making sure no linting errors in your code before committing...'
+yarn lint ||
+(
+
+    echo '⚠️ Oops❗, you have a problem in your code. Check linter ❌⚒️
+          💡Run yarn lint, add changes & try committing again.👍🏻';
+    false;
+)
 
 echo '🎉 All checks passed ✅, committing your code...✨🚀🏄‍♂️🍻'
