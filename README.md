@@ -4,7 +4,7 @@
 
 # 🚀 Printinkz Portfolio 🏷️
 
-This code base is for the Printinkz portfolio website → [printinkz.com](https://printinkz.com/).
+This code base is for the Printinkz portfolio website → [www.printinkz.com](https://www.printinkz.com/).
 
 ## Let's start 🎇
 
