@@ -10,6 +10,12 @@ export default function Home() {
         alt="Printinkz Logo"
         priority
       />
+      <h3 className="text-lg">
+        Coming Soon
+        <span role="img" className="animate-pulse ml-3">
+          🚀
+        </span>
+      </h3>
     </main>
   );
 }
