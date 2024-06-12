@@ -16,6 +16,9 @@
 # production
 /build
 
+#TRIAL CODES
+/trialCodes
+
 # misc
 .DS_Store
 *.pem

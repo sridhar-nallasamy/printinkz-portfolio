@@ -2,6 +2,10 @@ import type { Metadata } from 'next';
 import { Mulish } from 'next/font/google';
 
 import type { FcChildProps } from '@/types/common';
+import Header from '@/containers/Header';
+import Footer from '@/containers/Footer';
+import StoreProvider from '@/store/StoreProvider';
+import Main from '@/containers/Main/Main';
 import './globals.css';
 
 const mulish = Mulish({ subsets: ['latin'] });
@@ -23,7 +27,13 @@ export const metadata: Metadata = {
 const RootLayout: React.FC<FcChildProps> = ({ children }) => {
   return (
     <html lang="en">
-      <body className={mulish.className}>{children}</body>
+      <StoreProvider>
+        <body className={mulish.className}>
+          <Header />
+          <Main>{children}</Main>
+          <Footer />
+        </body>
+      </StoreProvider>
     </html>
   );
 };
