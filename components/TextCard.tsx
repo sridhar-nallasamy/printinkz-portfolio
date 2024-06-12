@@ -1,10 +1,9 @@
 import { TextCardProps } from '@/types/common';
-import React from 'react';
 import Button from './Button';
 
 //Title, Subtitle, Content, ActionItems, Listings
 
-const TextCard = ({
+const TextCard: React.FC<TextCardProps> = ({
   id,
   title,
   subTitle,
@@ -12,7 +11,7 @@ const TextCard = ({
   actionButton,
   listing,
   style,
-}: TextCardProps) => {
+}) => {
   return (
     <div
       id={`${id}_textcard`}

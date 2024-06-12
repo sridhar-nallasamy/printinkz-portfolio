@@ -35,7 +35,7 @@ export default function Home() {
         </div>
         <div
           id="container_02_lists"
-          className="relative md:h-[400px] h-full p-4"
+          className="relative md:h-[25rem] h-full p-4"
         >
           <div
             id="container_02_background"

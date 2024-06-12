@@ -1,7 +1,15 @@
 import Image from 'next/image';
+
 import { ButtonProps } from '@/types/common';
 
-const Button = ({ type, title, icon, className, full, style }: ButtonProps) => {
+const Button: React.FC<ButtonProps> = ({
+  type,
+  title,
+  icon,
+  className,
+  full,
+  style,
+}) => {
   return (
     <button
       type={type}

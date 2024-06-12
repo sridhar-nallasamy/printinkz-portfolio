@@ -18,4 +18,13 @@ yarn lint ||
     false;
 )
 
+echo '👮🏻🚨 Making sure no typescript errors in your code before committing...'
+yarn type-check ||
+(
+
+    echo '⚠️ Oops❗, you have a type error in your code. Check types ❌⚒️
+          💡Run yarn type-check, add changes & try committing again.👍🏻';
+    false;
+)
+
 echo '🎉 All checks passed ✅, committing your code...✨🚀🏄‍♂️🍻'

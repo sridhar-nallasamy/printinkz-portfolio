@@ -20,8 +20,8 @@ const MobileNavbar = () => {
           href={item.url}
           onClick={() => dispatch(toggleNavbarState())}
           key={`navbar_${item.title}`}
-          className={`inline-block ${isMenuOpen ? 'animate-slideIn opacity-0' : ''} text-xl hover:font-extrabold hover:text-[#00774D]`}
-          style={{ '--delay': i * 0.25 + 's' }}
+          className={`inline-block text-xl hover:font-extrabold hover:text-[#00774D]`}
+          //style={{ '--delay': i * 0.25 + 's' }}
         >
           {item.title}
         </Link>
@@ -29,8 +29,8 @@ const MobileNavbar = () => {
       <Button
         type="button"
         title="Start Selling"
-        className={`text-xl bg-[#00774D] hover:bg-[#00774dd0] hover:shadow-md hover:shadow-[#00774D] text-white ${isMenuOpen ? 'animate-slideIn opacity-0' : ''}`}
-        style={{ '--delay': '1s' }}
+        className={`text-xl bg-[#00774D] hover:bg-[#00774dd0] hover:shadow-md hover:shadow-[#00774D] text-white`}
+        //style={{ '--delay': '1s' }}
       />
     </div>
   );

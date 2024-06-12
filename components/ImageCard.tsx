@@ -1,9 +1,15 @@
-import { ImageCardProps } from '@/types/common';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
 
-const ImageCard = ({ id, title, srcImage, url, style }: ImageCardProps) => {
+import { ImageCardProps } from '@/types/common';
+
+const ImageCard: React.FC<ImageCardProps> = ({
+  id,
+  title,
+  srcImage,
+  url,
+  style,
+}) => {
   return (
     <div
       id={id}
