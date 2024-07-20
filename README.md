@@ -61,7 +61,15 @@ bugfix/loader
 yarn lint
 ```
 
-Pre-commit hook with linting checkes has been defined & please don't bypass them while committing. ☠️
+#### ⚠️ Type Check
+
+- To check type errors / warnings from typescript
+
+```bash
+yarn type-check
+```
+
+Pre-commit hook with linting and type checkes has been defined & please don't bypass them while committing. ☠️
 
 ---
 
