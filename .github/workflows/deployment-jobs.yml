@@ -15,6 +15,10 @@ on:
         type: string
         required: true
         description: Cloud Run Service Name
+      dashboard-link:
+        type: string
+        required: true
+        description: Dashboard Link
     secrets:
       wif-provider:
         required: true
@@ -48,6 +52,8 @@ jobs:
         with:
           push: true
           tags: ${{ vars.CLOUD_REGION }}-docker.pkg.dev/${{ vars.PROJECT_ID }}/${{ inputs.artifact-rep }}/${{ inputs.run-service-name }}/${{ inputs.ref }}
+          build-args: |
+            DASHBOARD_LINK=${{ inputs.dashboard-link }}
       - name: Service Declaration
         run: |
           export IMAGE='${{ vars.CLOUD_REGION }}-docker.pkg.dev/${{ vars.PROJECT_ID }}/${{ inputs.artifact-rep }}/${{ inputs.run-service-name }}/${{ inputs.ref }}'

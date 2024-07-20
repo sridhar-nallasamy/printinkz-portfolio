@@ -58,6 +58,12 @@ EXPOSE 3000
 
 ENV PORT 3000
 
+# Receiving Arguments
+ARG DASHBOARD_LINK
+
+# Setting Up Environment Variables
+ENV NEXT_PUBLIC_DASHBOARD_LINK=${DASHBOARD_LINK}
+
 # server.js is created by next build from the standalone output
 # https://nextjs.org/docs/pages/api-reference/next-config-js/output
 CMD HOSTNAME="0.0.0.0" node server.js

@@ -13,6 +13,7 @@ jobs:
       ref: ${{ github.ref }}
       artifact-rep: ${{ vars.ARTIFACT_REPO_MAIN }}
       run-service-name: 'main-app'
+      dashboard-link: ${{ vars.DASHBOARD_LINK_PROD }}
     secrets:
       wif-provider: ${{ secrets.WIF_PROVIDER_MAIN }}
       wif-sa: ${{ secrets.WIF_SA_MAIN }}

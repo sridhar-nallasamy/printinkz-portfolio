@@ -1,10 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import { NavBarContents } from '@/constants/constants';
-import Button from '@/components/Button';
+import { navbarContents } from '@/constants/constants';
+import Button from '@/components/button';
 import { IconButton } from '@mui/material';
-import { Bars3Icon, CloseIcon } from '@/assets/svgs/Icons';
+import { ArrowLongRight, Bars3Icon, CloseIcon } from '@/assets/svgs/Icons';
 import { toggleNavbarState, navBarState } from '@/store/slices/navBarSlice';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 
@@ -18,7 +18,7 @@ const Navbar = () => {
         id="navbar-desktop"
         className="hidden md:flex w-[62%] h-full justify-around items-center font-semibold text-lg"
       >
-        {NavBarContents.map((item) => (
+        {navbarContents.map((item) => (
           <Link
             href={item.url}
             key={`navbar_${item.title}`}
@@ -31,6 +31,7 @@ const Navbar = () => {
           type="button"
           title="Start Selling"
           className="bg-[#00774D] hover:bg-[#00774dd0] hover:shadow-md hover:shadow-[#00774D] text-white"
+          // Icon={ArrowLongRight}
         />
       </nav>
       <nav
@@ -39,9 +40,9 @@ const Navbar = () => {
       >
         <IconButton onClick={() => dispatch(toggleNavbarState())}>
           {isMenuOpen ? (
-            <CloseIcon className="w-10 hover:text-[#00774D]" />
+            <CloseIcon className="w-12 hover:text-[#00774D]" />
           ) : (
-            <Bars3Icon className="w-10 hover:text-[#00774D]" />
+            <Bars3Icon className="w-12 hover:text-[#00774D]" />
           )}
         </IconButton>
       </nav>

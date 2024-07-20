@@ -2,10 +2,10 @@ import type { Metadata } from 'next';
 import { Mulish } from 'next/font/google';
 
 import type { FcChildProps } from '@/types/common';
-import Header from '@/containers/Header';
-import Footer from '@/containers/Footer';
+import Header from '@/containers/header';
+import Footer from '@/containers/footer';
 import StoreProvider from '@/store/StoreProvider';
-import Main from '@/containers/Main/Main';
+import Main from '@/containers/main/main';
 import './globals.css';
 
 const mulish = Mulish({ subsets: ['latin'] });

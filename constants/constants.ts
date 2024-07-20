@@ -1,22 +1,30 @@
 import {
   ImageCardProps,
+  ImageFrameProps,
   NavBarContentProps,
+  ProductProps,
   TextImageCardProps,
+  revenueFormStateProps,
 } from '@/types/common';
 import container_02_img_01 from '@/assets/svgs/container_02/1.png';
 import container_02_img_02 from '@/assets/svgs/container_02/2.png';
 import container_02_img_03 from '@/assets/svgs/container_02/3.png';
 import container_01_img from '@/assets/svgs/container_01.png';
 import container_03_img from '@/assets/svgs/container_03.png';
+import coffeeMugCustomImage from '@/assets/webps/coffeeMugs.webp';
+import phoneCaseCustomImage from '@/assets/webps/phoneCase.webp';
+import postersCustomImage from '@/assets/webps/posters.webp';
+import tshirtCustomImage from '@/assets/webps/tshirts.webp';
+import { ArrowLongRight } from '@/assets/svgs/Icons';
 
-export const NavBarContents: NavBarContentProps[] = [
+const navbarContents: NavBarContentProps[] = [
   { title: 'Products', url: '/products' },
   { title: 'Services', url: '/' },
   { title: 'Learn', url: '/' },
   { title: 'Signup', url: '/' },
 ];
 
-export const FooterContents = [
+const footerContents = [
   {
     ContactUs: [
       { title: 'Instagram', url: '', icon: '' },
@@ -26,13 +34,9 @@ export const FooterContents = [
   },
 ];
 
-export const benefits = [
-  'No Minimum',
-  '36 hours dispatch',
-  'Responsive dashboard',
-];
+const benefits = ['No Minimum', '36 hours dispatch', 'Responsive dashboard'];
 
-export const container_02_listing: ImageCardProps[] = [
+const container02Listing: ImageCardProps[] = [
   {
     id: 'container_02_list_01',
     srcImage: container_02_img_01,
@@ -53,7 +57,7 @@ export const container_02_listing: ImageCardProps[] = [
   },
 ];
 
-export const textImageContainer_listing: TextImageCardProps[] = [
+const textImageContainerListing: TextImageCardProps[] = [
   {
     id: 'container_01',
     textContent: {
@@ -72,8 +76,8 @@ export const textImageContainer_listing: TextImageCardProps[] = [
     imageContent: {
       src: container_01_img,
       alt: 'Product Image',
-      width: 400,
-      height: 400,
+      width: 600,
+      height: 600,
     },
   },
   {
@@ -89,6 +93,7 @@ export const textImageContainer_listing: TextImageCardProps[] = [
         className:
           'bg-black hover:bg-gray-800 hover:shadow-md hover:shadow-gray-800 text-white',
         full: false,
+        Icon: ArrowLongRight,
       },
     },
     imageContent: {
@@ -99,3 +104,170 @@ export const textImageContainer_listing: TextImageCardProps[] = [
     },
   },
 ];
+
+const container04Listing: ImageFrameProps[] = [
+  {
+    id: 'container_04_image_01',
+    imageContent: {
+      src: container_03_img,
+      alt: 'container_04_image_01',
+      width: 200,
+      height: 200,
+    },
+    title: 'Software Engineer',
+  },
+  {
+    id: 'container_04_image_02',
+    imageContent: {
+      src: container_03_img,
+      alt: 'container_04_image_02',
+      width: 200,
+      height: 200,
+    },
+    title: 'Software Engineer',
+  },
+  {
+    id: 'container_04_image_03',
+    imageContent: {
+      src: container_03_img,
+      alt: 'container_04_image_03',
+      width: 200,
+      height: 200,
+    },
+    title: 'Software Engineer',
+  },
+];
+
+const customerData = [
+  {
+    id: 'CUSTOMER_1',
+    customerName: 'Irwinn Bromwich',
+    customerEmail: 'irwin@gmail.com',
+    customerPhone: 9123483489,
+    profession: 'Influencer',
+    printInkzFeedback: {
+      id: 'FEEDBACK_1',
+      rating: 3,
+      feedback: 'Sed ante. Vivamus tortor. Duis mattis egestas metus.',
+    },
+    productsFeedback: [],
+  },
+  {
+    id: 'CUSTOMER_2',
+    customerName: 'Lavinia MacGiffin',
+    customerEmail: 'lavinaia@gmail.com',
+    customerPhone: 9123483489,
+    profession: 'Senior Sales Associate',
+    printInkzFeedback: {
+      id: 'FEEDBACK_2',
+      rating: 5,
+      feedback:
+        'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.',
+    },
+  },
+  {
+    id: 'CUSTOMER_3',
+    customerName: 'Kassey Haglington',
+    customerEmail: 'kassy@gmail.com',
+    customerPhone: 9123483489,
+    profession: 'Nuclear Power Engineer',
+  },
+  {
+    id: 'CUSTOMER_4',
+    customerName: 'Noami Aronstam',
+    customerEmail: 'noami@gmail.com',
+    customerPhone: 9123483489,
+    profession: 'Sales Associate',
+    printInkzFeedback: {
+      id: 'FEEDBACK_4',
+      rating: 5,
+      feedback:
+        'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.',
+    },
+  },
+  {
+    id: 'CUSTOMER_5',
+    customerName: 'Maggy Gencke',
+    customerEmail: 'maggy@gmail.com',
+    customerPhone: 9123483489,
+    profession: 'Human Resource',
+  },
+  {
+    id: 'CUSTOMER_6',
+    customerName: 'Ulrick Camerello',
+    customerEmail: 'urick@gmail.com',
+    customerPhone: 9123483489,
+    profession: 'Entrepreneur',
+    printInkzFeedback: {
+      id: 'FEEDBACK_6',
+      rating: 3,
+      feedback:
+        'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.',
+    },
+  },
+  {
+    id: 'CUSTOMER_7',
+    customerName: 'Cathrine Sprake',
+    customerEmail: 'cathrine@gmail.com',
+    customerPhone: 9123483489,
+    profession: 'IT Professional',
+    printInkzFeedback: {
+      id: 'FEEDBACK_7',
+      rating: 4,
+      feedback:
+        'In congue. Etiam justo. Etiam pretium iaculis justo.\n\nIn hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.',
+    },
+  },
+];
+
+const initialRevenueFormState: revenueFormStateProps = {
+  taxes: 0,
+  monthlyPlatformFee: 0,
+  productTransactionFee: 0,
+  monthlyOtherFee: 0,
+  quantitySold: 0,
+  retailPrice: 0,
+};
+
+const protoProducts: ProductProps[] = [
+  {
+    id: 'proto_tshirt',
+    type: 'T-Shirts',
+    title: 'Trendy Collections',
+    price: 400,
+    images: [tshirtCustomImage],
+  },
+  {
+    id: 'proto_mugs',
+    type: 'Mugs',
+    title: 'Ceramic Collections',
+    price: 200,
+    images: [coffeeMugCustomImage],
+  },
+  {
+    id: 'proto_posters',
+    type: 'Posters',
+    title: 'Anime | Sports | Movie | Classic Collections ',
+    price: 150,
+    images: [postersCustomImage],
+  },
+  {
+    id: 'proto_phoneCases',
+    type: 'PhoneCases',
+    title: 'Silicon | Hard Cover cases',
+    price: 400,
+    images: [phoneCaseCustomImage],
+  },
+];
+
+export {
+  navbarContents,
+  container04Listing,
+  benefits,
+  textImageContainerListing,
+  footerContents,
+  customerData,
+  container02Listing,
+  protoProducts,
+  initialRevenueFormState,
+};

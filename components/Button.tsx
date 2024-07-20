@@ -1,11 +1,9 @@
-import Image from 'next/image';
-
 import { ButtonProps } from '@/types/common';
 
 const Button: React.FC<ButtonProps> = ({
   type,
   title,
-  icon,
+  Icon,
   className,
   full,
   style,
@@ -14,10 +12,10 @@ const Button: React.FC<ButtonProps> = ({
     <button
       type={type}
       style={style}
-      className={`${className} ${full && 'w-full'} px-6 py-3 select-none font-semibold hover:font-extrabold text-center rounded-full`}
+      className={`${className} ${full == true ? 'w-full' : ''} px-6 py-3 select-none font-semibold hover:font-extrabold text-xl text-center rounded-full inline-flex items-center justify-center`}
     >
-      {icon && <Image src={icon} alt={title} />}
       {title}
+      {Icon && <Icon className="h-full" />}
     </button>
   );
 };

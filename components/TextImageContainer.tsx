@@ -1,6 +1,6 @@
 import { TextImageCardProps } from '@/types/common';
 import Image from 'next/image';
-import TextCard from './TextCard';
+import TextCard from './textCard';
 
 const TextImageContainer = ({
   id,

@@ -3,7 +3,7 @@
 import { useAppSelector } from '@/store/hooks';
 import { navBarState } from '@/store/slices/navBarSlice';
 import { FcChildProps } from '@/types/common';
-import MobileNavbar from '../navbar/MobileNavbar';
+import MobileNavbar from '../navbar/mobileNavbar';
 
 const Main = ({ children }: FcChildProps) => {
   const isMenuOpen = useAppSelector(navBarState);

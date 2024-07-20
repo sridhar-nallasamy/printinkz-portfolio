@@ -1,5 +1,5 @@
 import { TextCardProps } from '@/types/common';
-import Button from './Button';
+import Button from './button';
 
 //Title, Subtitle, Content, ActionItems, Listings
 
@@ -17,15 +17,15 @@ const TextCard: React.FC<TextCardProps> = ({
       id={`${id}_textcard`}
       className={`${style && style} p-5 rounded-lg flex flex-col flex-auto flex-wrap gap-2 justify-around`}
     >
-      <div id={`${id}_title`} className="text-5xl font-extrabold">
-        {title}
-      </div>
       {subTitle && (
         <div id={`${id}_subtitle`} className="text-2xl">
           {subTitle}
         </div>
       )}
-      <div id={`${id}_content`} className="text-xl">
+      <div id={`${id}_title`} className="text-6xl font-extrabold">
+        {title}
+      </div>
+      <div id={`${id}_content`} className="text-2xl">
         {content}
       </div>
       {actionButton && (
@@ -34,12 +34,15 @@ const TextCard: React.FC<TextCardProps> = ({
           title={actionButton.title}
           className={actionButton.className}
           full={actionButton.full}
+          Icon={actionButton.Icon}
         />
       )}
       {listing && (
         <ul>
           {listing.map((item, index) => (
-            <li key={`listing_${index}`}>✅{item}</li>
+            <li key={`listing_${index}`} className="p-2">
+              ✅{item}
+            </li>
           ))}
         </ul>
       )}
