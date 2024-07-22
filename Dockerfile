@@ -1,15 +1,14 @@
 FROM node:21-alpine AS base
 
-# Install dependencies only when needed
 FROM base AS deps
 # To add the missing shared libraries to your image
 RUN apk add --no-cache libc6-compat
 
 WORKDIR /app
 
-# Install dependencies based on the preferred package manager
-COPY package.json yarn.lock* ./
-RUN yarn --frozen-lockfile
+# Install dependencies
+COPY package.json pnpm-lock.yaml* ./
+RUN corepack enable pnpm && pnpm i --frozen-lockfile
 
 # Rebuild the source code only when needed
 FROM base AS builder
@@ -20,15 +19,8 @@ COPY . .
 # To disable NextJs telemetry during the build.
 ENV NEXT_TELEMETRY_DISABLED 1
 
-# Receiving Arguments
-# ARG CLIENT_VAR
-# ARG SERVER_VAR
-# Setting up the Environment variables
-# ENV NEXT_PUBLIC_CLIENT_VAR=${CLIENT_VAR}
-# ENV SERVER_VAR=${SERVER_VAR}
-
 # Building the app
-RUN yarn run build
+RUN corepack enable pnpm && pnpm run build
 
 # Production image, copy all the files and run next
 FROM base AS runner
@@ -40,8 +32,6 @@ ENV NEXT_TELEMETRY_DISABLED 1
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
-
-# COPY --from=builder /app/public ./public
 
 # Set the correct permission for prerender cache
 RUN mkdir .next
