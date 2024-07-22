@@ -34,7 +34,7 @@ pnpm dev
 <details>
 <summary>Feature Branch 📂</summary>
 
-Feature branch should start with "feature/\*\*", i.e.,
+Feature branch should be lowercase & starts with "feature/\*\*", i.e.,
 
 ```
 feature/animations
@@ -45,7 +45,7 @@ feature/animations
 <details>
 <summary>Bugfix Branch 📂</summary>
 
-Feature branch should start with "bugfix/\*\*", i.e.,
+Feature branch should be lowercase & start with "bugfix/\*\*", i.e.,
 
 ```
 bugfix/loader
