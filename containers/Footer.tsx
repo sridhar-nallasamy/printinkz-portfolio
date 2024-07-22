@@ -1,15 +1,15 @@
 'use client';
-import Button from '@/components/button';
+import Button from '@/components/btn';
 import Input from '@/components/input';
 import { ChangeEvent, useState } from 'react';
 
 const Footer = () => {
   const [mail, setEmail] = useState<string>('');
-  function handleOnChange(e: ChangeEvent<HTMLInputElement>) {
-    if (e.target.value != null) {
-      setEmail((prevValue: string) => e.target.value);
-    }
-  }
+
+  const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.value) setEmail(e.target.value);
+  };
+
   return (
     <div
       className={`bg-[#FF9E21] border-4 border-black rounded-[2rem] flex items-center justify-around p-4 mt-3`}

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { navbarContents } from '@/constants/constants';
-import Button from '@/components/button';
+import Button from '@/components/btn';
 import { IconButton } from '@mui/material';
 import { Bars3Icon, CloseIcon } from '@/assets/svgs/Icons';
 import { toggleNavbarState, navBarState } from '@/store/slices/navBarSlice';

@@ -4,7 +4,7 @@ import { initialRevenueFormState } from '@/constants/constants';
 import Input from '@/components/input';
 import { revenueFormStateProps } from '@/types/common';
 import { ChangeEvent, useState } from 'react';
-import Button from '../button';
+import Button from '../btn';
 
 const labelClassName = 'sm:w-4/5 w-[50%]';
 const inputClassName = 'sm:w-1/5 w-[50%]';

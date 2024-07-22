@@ -1,5 +1,5 @@
 import { TextCardProps } from '@/types/common';
-import Button from './button';
+import Button from './btn';
 
 //Title, Subtitle, Content, ActionItems, Listings
 
