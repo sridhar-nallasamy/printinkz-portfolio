@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import PrintinkzLogo from '@/assets/svgs/printinkz.svg';
-import Navbar from './navbar/navbar';
+import Navbar from './navbar';
 
 const Header = () => {
   return (

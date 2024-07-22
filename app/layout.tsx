@@ -4,8 +4,9 @@ import { Mulish } from 'next/font/google';
 import type { FcChildProps } from '@/types/common';
 import Header from '@/containers/header';
 import Footer from '@/containers/footer';
-import StoreProvider from '@/store/StoreProvider';
-import Main from '@/containers/main/main';
+import StoreProvider from '@/store/storeProvider';
+import Main from '@/containers/main';
+
 import './globals.css';
 
 const mulish = Mulish({ subsets: ['latin'] });

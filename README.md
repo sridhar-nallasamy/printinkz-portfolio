@@ -18,13 +18,13 @@ This code base is for the Printinkz portfolio website → [www.printinkz.com](ht
 - To install the dependecies
 
 ```bash
-yarn
+pnpm install
 ```
 
 - To start local server (serving port 🔗 [3000](http://localhost:3000))
 
 ```bash
-yarn dev
+pnpm dev
 ```
 
 ### 🤝🏼 Contribution
@@ -58,7 +58,7 @@ bugfix/loader
 - To check lint errors / warnings
 
 ```bash
-yarn lint
+pnpm lint
 ```
 
 #### ⚠️ Type Check
@@ -66,7 +66,7 @@ yarn lint
 - To check type errors / warnings from typescript
 
 ```bash
-yarn type-check
+pnpm type-check
 ```
 
 Pre-commit hook with linting and type checkes has been defined & please don't bypass them while committing. ☠️

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { navbarContents } from '@/constants/constants';
 import Button from '@/components/button';
 import { IconButton } from '@mui/material';
-import { ArrowLongRight, Bars3Icon, CloseIcon } from '@/assets/svgs/Icons';
+import { Bars3Icon, CloseIcon } from '@/assets/svgs/Icons';
 import { toggleNavbarState, navBarState } from '@/store/slices/navBarSlice';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 

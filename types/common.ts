@@ -5,6 +5,8 @@ export interface FcChildProps {
   children: React.ReactNode;
 }
 
+export type SvgIconPropsFc = FC<SVGAttributes<SVGElement>>;
+
 export interface NavBarContentProps {
   title: string;
   url: string;
@@ -23,7 +25,6 @@ export type ButtonProps = {
   className: string;
   full?: boolean;
   style?: Object;
-  // onClick?: () => {};
 };
 
 export type InputProps = {
@@ -37,7 +38,7 @@ export type InputProps = {
   inputClassName?: string;
   forForm?: string;
   info?: string;
-  onChange?: (e: ChangeEvent<HTMLInputElement>, inputType: string) => void;
+  onChange?: (_e: ChangeEvent<HTMLInputElement>, _inputType: string) => void;
   min?: number;
   max?: number;
   step?: number;
