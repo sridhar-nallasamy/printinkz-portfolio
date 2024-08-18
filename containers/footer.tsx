@@ -12,8 +12,8 @@ const Footer = () => {
     }
   }
   return (
-    <div
-      className={`bg-[#FF9E21] border-4 border-black rounded-[2rem] flex flex-col sm:flex-row items-center justify-around p-4 mt-3`}
+    <footer
+      className={`w-full min-h-[10vh] bg-[#FF9E21] border-4 border-black rounded-[2rem] flex flex-col sm:flex-row items-center justify-around p-4`}
     >
       <div className="text-2xl font-extrabold">Be the first one to know!</div>
       <form className="flex items-center gap-2" id="subscription-form">
@@ -35,7 +35,7 @@ const Footer = () => {
         />
       </form>
       <div className="text-2xl font-extrabold">Contact Us!</div>
-    </div>
+    </footer>
   );
 };
 

@@ -4,7 +4,7 @@ import { navbarContents } from '@/constants/navbar';
 import Link from 'next/link';
 import { toggleNavbarState, navBarState } from '@/store/slices/navBarSlice';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
-import { IconButton } from '@mui/material';
+import { IconButton, Typography } from '@mui/material';
 import { Bars3Icon, CloseIcon } from '@/assets/icons';
 import CustomButton from '@/components/customButton';
 
@@ -24,7 +24,7 @@ const Navbar = () => {
             key={`navbar_${item.title}`}
             className="inline-block hover:font-extrabold hover:text-[#00774D]"
           >
-            {item.title}
+            <Typography variant="h6">{item.title}</Typography>
           </Link>
         ))}
         <CustomButton
