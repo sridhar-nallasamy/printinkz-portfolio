@@ -7,6 +7,7 @@ const config: Config = {
     './containers/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './assets/**/*.{ts,tsx}',
+    './constants/**/*.{ts,tsx}',
   ],
   theme: {},
   plugins: [],
