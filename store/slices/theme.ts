@@ -1,7 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { themeModeType, ThemeStateProps } from '@/types/theme';
 import { ThemeOptions } from '@mui/material';
+import { Mulish } from 'next/font/google';
 import { RootState } from '../store';
+
+const mulish = Mulish({ subsets: ['latin'] });
 
 const initialState: ThemeStateProps = {
   mode: 'light',
@@ -31,6 +34,12 @@ export const themeSettings = (mode: themeModeType): ThemeOptions => {
         dark: '#28282B',
       },
     },
+    typography: {
+      fontFamily: mulish.style.fontFamily,
+      button: {
+        fontWeight: 'bold',
+      },
+    },
     components: {
       MuiButton: {
         styleOverrides: {
@@ -38,10 +47,6 @@ export const themeSettings = (mode: themeModeType): ThemeOptions => {
             fontSize: '1.25rem',
             lineHeight: '1.75rem',
             borderRadius: '9999px !important',
-            fontWeight: '500',
-            '&:hover': {
-              fontWeight: '600',
-            },
           },
         },
       },
