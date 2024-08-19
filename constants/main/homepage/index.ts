@@ -217,28 +217,28 @@ const protoProducts: ProductProps[] = [
     type: 'T-Shirts',
     title: 'Trendy Collections',
     price: 400,
-    images: [tshirtCustomImage],
+    images: [{ image: tshirtCustomImage, imageTitle: 'tshirt model' }],
   },
   {
     id: 'proto_mugs',
     type: 'Mugs',
     title: 'Ceramic Collections',
     price: 200,
-    images: [coffeeMugCustomImage],
+    images: [{ image: coffeeMugCustomImage, imageTitle: 'coffee mug model' }],
   },
   {
     id: 'proto_posters',
     type: 'Posters',
     title: 'Anime | Sports | Movie | Classic Collections ',
     price: 150,
-    images: [postersCustomImage],
+    images: [{ image: postersCustomImage, imageTitle: 'poster model' }],
   },
   {
     id: 'proto_phoneCases',
     type: 'PhoneCases',
     title: 'Silicon | Hard Cover cases',
     price: 400,
-    images: [phoneCaseCustomImage],
+    images: [{ image: phoneCaseCustomImage, imageTitle: 'phone case model' }],
   },
 ];
 

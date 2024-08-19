@@ -1,6 +1,7 @@
 import FeedbackCard from '@/components/feedbackCard';
 import ImageCard from '@/components/imageCard';
 import ImageFrame from '@/components/imageFrame';
+import PrototypeCard from '@/components/prototypeCard';
 import TextCard from '@/components/textCard';
 import TextImageContainer from '@/components/textImageContainer';
 import {
@@ -8,6 +9,7 @@ import {
   container02Listing,
   container04Listing,
   customerData,
+  protoProducts,
   textImageContainerListing,
 } from '@/constants/main/homepage';
 import { Typography } from '@mui/material';
@@ -46,15 +48,17 @@ export default function Home() {
           id="container_02_textcard"
           className="my-8 mx-3 p-3 flex flex-col items-center"
         >
-          <p className="font-extrabold text-5xl text-center">
+          <Typography variant="h2" className="font-extrabold text-center">
             START SELLING PRODUCTS
-          </p>
+          </Typography>
           <hr className="flex-grow border-t w-[60%] border-black border-4" />
-          <p className="font-extrabold text-8xl text-center">IN JUST 3 STEPS</p>
+          <Typography variant="h1" className="font-extrabold text-center">
+            IN JUST 3 STEPS
+          </Typography>
         </div>
         <div
           id="container_02_lists"
-          className="relative md:h-[55vh] h-full p-4" //md:h-[25rem]
+          className="relative md:h-[55vh] h-full p-4"
         >
           <div
             id="container_02_background"
@@ -110,6 +114,25 @@ export default function Home() {
           {container04Listing.map((item, index) => (
             <ImageFrame key={index} {...item} />
           ))}
+        </div>
+      </div>
+      {/* container_05 form */}
+      <div
+        id="container_05"
+        className="w-full md:min-h-[80vh] p-2 sm:p-6 text-center bg-gray-200 flex flex-col items-center"
+      >
+        <Typography variant="h4" className="font-extrabold">
+          How much could you make
+        </Typography>
+        <Typography variant="h6" className="font-semibold">
+          Try different prices and sales volume
+        </Typography>
+        <div
+          id="container_05_product_form"
+          className="flex lg:flex-row flex-col gap-2 md:justify-evenly items-center bg-white px-2 py-4 mt-5 w-[80%]"
+        >
+          <PrototypeCard product={protoProducts} />
+          {/* <RevenueCalculatorForm /> */}
         </div>
       </div>
       {/* Sellers Review */}

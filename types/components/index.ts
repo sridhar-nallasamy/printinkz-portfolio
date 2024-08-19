@@ -1,4 +1,4 @@
-import { ButtonProps } from '@mui/material';
+import { ButtonProps, InputProps } from '@mui/material';
 import { ImageProps, StaticImageData } from 'next/image';
 import { FC, ReactElement, SVGAttributes } from 'react';
 
@@ -9,6 +9,13 @@ export interface CustomButtonProps extends ButtonProps {
   className: string;
   full?: boolean;
   style?: Object;
+}
+
+export interface CustomInputProps extends InputProps {
+  label?: string;
+  inputType: 'number' | 'text' | 'email' | 'password' | 'range';
+  value: number | string;
+  info?: string;
 }
 
 export type TextCardProps = {
@@ -57,7 +64,7 @@ export type ProductProps = {
   type: 'T-Shirts' | 'Mugs' | 'Posters' | 'PhoneCases';
   title: string;
   price: number;
-  images: StaticImageData[];
+  images: ImageListProps[];
   onSale?: boolean;
   isAvailable?: boolean;
   colors?: Array<string>;
@@ -65,8 +72,17 @@ export type ProductProps = {
   customizable?: boolean;
 };
 
+export type ImageListProps = {
+  image: StaticImageData;
+  imageTitle: string;
+};
+
+export type ImageListNavigatorProps = {
+  imageList: ImageListProps[];
+};
+
 export type PrototypeComponentProps = {
-  products: ProductProps[];
+  product: ProductProps[];
 };
 
 export type CustomTooltipProps = {
