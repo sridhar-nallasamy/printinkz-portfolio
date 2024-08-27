@@ -12,7 +12,7 @@ const MobileNavbar = () => {
   const dispatch = useAppDispatch();
   return (
     <div
-      className={`w-full h-full md:hidden transition-all duration-300 ${
+      className={`w-full h-full lg:hidden transition-all duration-300 ${
         isMenuOpen ? 'max-h-full opacity-100 py-2 ' : 'max-h-0 opacity-0'
       } flex flex-col justify-evenly items-center`}
     >

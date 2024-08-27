@@ -19,14 +19,16 @@ const TextImageContainer = ({
       />
       <div
         id={`${id}_image}`}
-        className="md:w-[50%] w-full flex items-center justify-center"
+        className="md:w-[50%] w-full flex items-center justify-center relative"
       >
         <Image
           src={imageContent.src}
           alt={imageContent.alt}
-          height={imageContent.height}
-          width={imageContent.width}
-          className={`${id == 'container_03' ? 'rounded-lg' : ''}`}
+          className={`relative ${id == 'container_03' ? 'rounded-lg' : ''}`} //h-[50%] w-[50%] md:h-full md:w-full
+          layout="fill"
+          objectFit="cover"
+          //height={imageContent.height}
+          //width={imageContent.width}
         />
       </div>
     </div>

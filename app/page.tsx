@@ -17,8 +17,8 @@ import { Typography } from '@mui/material';
 export default function Home() {
   return (
     <div id="homepage">
-      {/* container_01 > textcard & image & listing */}
-      <div className="md:min-h-[80vh]">
+      {/* container_01 > textcard & image & listing //[80vh]md:h-[55vh]*/}
+      <div className="md:min-h-full">
         <TextImageContainer
           {...textImageContainerListing[0]}
           style="p-3 bg-[#DBE668] border-4 border-black rounded-3xl mx-3 flex-col-reverse md:flex-row md:h-[78vh]"
@@ -39,27 +39,24 @@ export default function Home() {
         </div>
       </div>
 
-      {/* container_02 textcard & lists(background & image container)*/}
+      {/* container_02 textcard & lists(background & image container) //[80vh]md:h-[55vh]*/}
       <div
         id="container_02"
-        className="md:min-h-[89vh] flex flex-col justify-between"
+        className="md:min-h-full flex flex-col justify-between"
       >
         <div
           id="container_02_textcard"
-          className="my-8 mx-3 p-3 flex flex-col items-center"
+          className="my-6 mx-3 p-3 flex flex-col items-center"
         >
-          <Typography variant="h2" className="font-extrabold text-center">
+          <Typography variant="h3" className="font-extrabold text-center">
             START SELLING PRODUCTS
           </Typography>
           <hr className="flex-grow border-t w-[60%] border-black border-4" />
-          <Typography variant="h1" className="font-extrabold text-center">
+          <Typography variant="h2" className="font-extrabold text-center">
             IN JUST 3 STEPS
           </Typography>
         </div>
-        <div
-          id="container_02_lists"
-          className="relative md:h-[55vh] h-full p-4"
-        >
+        <div id="container_02_lists" className="relative h-full p-4">
           <div
             id="container_02_background"
             className="absolute bottom-0 left-0 w-full md:h-[75%] h-full bg-[#4668CE] -z-10 border-4 border-black"
@@ -75,11 +72,13 @@ export default function Home() {
         </div>
       </div>
 
-      {/* container_03 */}
-      <TextImageContainer
-        {...textImageContainerListing[1]}
-        style="bg-[#FFCF56] flex-col md:flex-row-reverse"
-      />
+      {/* container_03*/}
+      <div className="md:min-h-full">
+        <TextImageContainer
+          {...textImageContainerListing[1]}
+          style="bg-[#FFCF56] flex-col md:flex-row-reverse"
+        />
+      </div>
 
       {/* Product Categories */}
       <div id="product_categories">
@@ -121,7 +120,7 @@ export default function Home() {
         id="container_05"
         className="w-full md:min-h-[80vh] p-2 sm:p-6 text-center bg-gray-200 flex flex-col items-center"
       >
-        <Typography variant="h4" className="font-extrabold">
+        <Typography variant="h6" className="font-extrabold">
           How much could you make
         </Typography>
         <Typography variant="h6" className="font-semibold">
@@ -129,14 +128,14 @@ export default function Home() {
         </Typography>
         <div
           id="container_05_product_form"
-          className="flex lg:flex-row flex-col gap-2 md:justify-evenly items-center bg-white px-2 py-4 mt-5 w-[80%]"
+          className="flex lg:flex-row flex-col gap-2 md:justify-evenly items-center bg-white px-2 py-4 mt-5 w-[80%] max-h-full"
         >
           <PrototypeCard product={protoProducts} />
           {/* <RevenueCalculatorForm /> */}
         </div>
       </div>
       {/* Sellers Review */}
-      <div id="sellers-review" className="w-full flex justify-center mt-10 ">
+      <div id="sellers-review" className="w-full flex justify-center mt-5 ">
         <div id="sellers-review-title" className="relative inline-block">
           <Typography
             variant="h1"

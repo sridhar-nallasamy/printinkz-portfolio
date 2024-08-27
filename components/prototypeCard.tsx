@@ -21,11 +21,11 @@ const PrototypeCard: React.FC<PrototypeComponentProps> = ({ product }) => {
   }
   return (
     <div className="lg:w-[50%] w-full flex flex-col items-center">
-      <p id="product_name" className="text-2xl font-bold">
+      <p id="product_name" className="text-xl font-bold">
         {product[activeIndex].type}
       </p>
-      <p className="text-lg font-semibold">{product[activeIndex].title}</p>
-      <p className="text-sm font-semibold">
+      <p className="text-sm font-semibold">{product[activeIndex].title}</p>
+      <p className="text-xs font-semibold">
         starting from {product[activeIndex].price}
       </p>
       <div className="flex align-middle">
@@ -37,7 +37,7 @@ const PrototypeCard: React.FC<PrototypeComponentProps> = ({ product }) => {
           <Image
             src={product[activeIndex].images[0].image}
             alt={product[activeIndex].title}
-            width={450}
+            width={325}
             className="rounded-md mt-3"
           />
         </div>
@@ -46,15 +46,15 @@ const PrototypeCard: React.FC<PrototypeComponentProps> = ({ product }) => {
           onClick={() => handleNavigation(1)}
         />
       </div>
-      <ImageList cols={product.length} rowHeight={100} className="p-2">
+      <ImageList cols={product.length} rowHeight={70} className="p-2">
         {product.map((item, index) => (
           <ImageListItem key={`product_${item.id}`}>
             <Image
               src={item.images[0].image}
               alt={item.title}
               loading="lazy"
-              width={100}
-              height={100}
+              width={70}
+              height={70}
               onClick={() => handleActiveState(index)}
               className={`rounded-md ${index === activeIndex ? 'pb-1 border-4 border-b-[#00774D]' : 'hover:scale-105 hover:cursor-pointer'} `}
             />

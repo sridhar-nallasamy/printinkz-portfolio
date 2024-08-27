@@ -16,7 +16,7 @@ const Navbar = () => {
     <>
       <nav
         id="navbar-desktop"
-        className="hidden md:flex w-[62%] h-full justify-around items-center font-semibold text-lg"
+        className="hidden lg:flex w-[62%] h-full justify-around items-center font-semibold text-lg"
       >
         {navbarContents.map((item) => (
           <Link
@@ -36,7 +36,7 @@ const Navbar = () => {
       </nav>
       <nav
         id="navbar-mobile"
-        className="w-[62%] flex md:hidden flex-col items-end font-semibold text-lg pr-3"
+        className="w-[62%] flex lg:hidden flex-col items-end font-semibold text-lg pr-3"
       >
         <IconButton onClick={() => dispatch(toggleNavbarState())}>
           {isMenuOpen ? (
