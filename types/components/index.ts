@@ -1,21 +1,41 @@
-import { ButtonProps, InputProps } from '@mui/material';
+import { SvgIconComponent } from '@mui/icons-material';
+import { ButtonProps, InputProps, TooltipProps } from '@mui/material';
+import {
+  ChangeEvent,
+  FC,
+  FocusEvent,
+  ReactElement,
+  SVGAttributes,
+} from 'react';
 import { ImageProps, StaticImageData } from 'next/image';
-import { FC, ReactElement, SVGAttributes } from 'react';
+
+export interface CustomIconProps {
+  Icon: SvgIconComponent;
+}
 
 export interface CustomButtonProps extends ButtonProps {
   type: 'button' | 'submit';
   title?: string;
-  Icon?: FC<SVGAttributes<SVGElement>>;
+  Icon?: FC<SVGAttributes<SVGElement>> | SvgIconComponent;
   className: string;
   full?: boolean;
   style?: Object;
 }
 
 export interface CustomInputProps extends InputProps {
+  type: string;
   label?: string;
-  inputType: 'number' | 'text' | 'email' | 'password' | 'range';
-  value: number | string;
   info?: string;
+  handleChange: (e: ChangeEvent<any>) => void;
+  handleBlur: (e: FocusEvent<any>) => void;
+  helperText?: string | React.ReactNode;
+  inputProp?: 'Rs' | '%';
+}
+
+export interface CustomTooltipProps extends TooltipProps {
+  children: ReactElement;
+  title: string;
+  // followCursor: boolean;
 }
 
 export type TextCardProps = {
@@ -50,15 +70,6 @@ export type ImageFrameProps = {
   style?: string;
 };
 
-export type revenueFormStateProps = {
-  taxes: number;
-  monthlyPlatformFee: number;
-  productTransactionFee: number;
-  monthlyOtherFee: number;
-  quantitySold: number;
-  retailPrice: number;
-};
-
 export type ProductProps = {
   id: string;
   type: 'T-Shirts' | 'Mugs' | 'Posters' | 'PhoneCases';
@@ -83,12 +94,6 @@ export type ImageListNavigatorProps = {
 
 export type PrototypeComponentProps = {
   product: ProductProps[];
-};
-
-export type CustomTooltipProps = {
-  children: ReactElement;
-  title: string;
-  // followCursor: boolean;
 };
 
 export type CustomerProps = {

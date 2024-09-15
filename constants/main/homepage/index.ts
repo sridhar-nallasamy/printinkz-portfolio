@@ -3,7 +3,6 @@ import {
   ImageCardProps,
   ImageFrameProps,
   ProductProps,
-  revenueFormStateProps,
   TextImageCardProps,
 } from '@/types/components';
 import container01Img from '@/assets/pngs/container01.png';
@@ -202,15 +201,6 @@ const customerData = [
   },
 ];
 
-const initialRevenueFormState: revenueFormStateProps = {
-  taxes: 0,
-  monthlyPlatformFee: 0,
-  productTransactionFee: 0,
-  monthlyOtherFee: 0,
-  quantitySold: 0,
-  retailPrice: 0,
-};
-
 const protoProducts: ProductProps[] = [
   {
     id: 'proto_tshirt',
@@ -249,5 +239,4 @@ export {
   benefits,
   customerData,
   protoProducts,
-  initialRevenueFormState,
 };

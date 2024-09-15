@@ -1,4 +1,5 @@
 import FeedbackCard from '@/components/feedbackCard';
+import RevenueCalculatorForm from '@/components/forms/revenueCalculatorForm';
 import ImageCard from '@/components/imageCard';
 import ImageFrame from '@/components/imageFrame';
 import PrototypeCard from '@/components/prototypeCard';
@@ -131,7 +132,7 @@ export default function Home() {
           className="flex lg:flex-row flex-col gap-2 md:justify-evenly items-center bg-white px-2 py-4 mt-5 w-[80%] max-h-full"
         >
           <PrototypeCard product={protoProducts} />
-          {/* <RevenueCalculatorForm /> */}
+          <RevenueCalculatorForm />
         </div>
       </div>
       {/* Sellers Review */}
