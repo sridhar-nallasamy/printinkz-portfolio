@@ -1,4 +1,3 @@
-import FeedbackCard from '@/components/feedbackCard';
 import RevenueCalculatorForm from '@/components/forms/revenueCalculatorForm';
 import ImageCard from '@/components/imageCard';
 import ImageFrame from '@/components/imageFrame';
@@ -9,10 +8,10 @@ import {
   benefits,
   container02Listing,
   container04Listing,
-  customerData,
   protoProducts,
   textImageContainerListing,
 } from '@/constants/main/homepage';
+import CustomerReview from '@/containers/main/customerReview';
 import { Typography } from '@mui/material';
 
 export default function Home() {
@@ -149,16 +148,7 @@ export default function Home() {
           </span>
         </div>
       </div>
-      <div
-        id="sellers-review-content"
-        className="mt-10 p-10 grid grid-flow-row gap-16 grid-cols-1 md:grid-cols-2 xl:grid-cols-3"
-      >
-        {customerData
-          .filter((customer) => 'printInkzFeedback' in customer)
-          .map((data, index) => (
-            <FeedbackCard key={`customer_feedback_${index}`} feedback={data} />
-          ))}
-      </div>
+      <CustomerReview />
     </div>
   );
 }

@@ -20,6 +20,7 @@ export interface CustomButtonProps extends ButtonProps {
   className: string;
   full?: boolean;
   style?: Object;
+  handleClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 export interface CustomInputProps extends InputProps {
@@ -61,6 +62,19 @@ export type TextImageCardProps = {
   textContent: TextCardProps;
   imageContent: ImageProps;
   style?: string;
+};
+
+export type paginationWrapperProps = {
+  totalContents: number;
+  contentsPerPage: number;
+  handleCurrentPage: React.Dispatch<React.SetStateAction<number>>;
+  children: React.ReactNode;
+  activePage: number;
+};
+
+export type ScrollableWrapperProps = {
+  children: React.ReactNode;
+  id: string;
 };
 
 export type ImageFrameProps = {

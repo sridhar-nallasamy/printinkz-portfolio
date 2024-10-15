@@ -9,7 +9,7 @@ const FeedbackCard: React.FC<FeedbackComponentProps> = ({ feedback }) => {
       <Avatar {...stringAvatar(feedback.customerName)} />
       <div
         id={`customer_feedback`}
-        className="p-5 border-2 border-black rounded-full flex flex-col h-[12.5rem]"
+        className="p-5 border-2 border-black rounded-full flex flex-col h-[12.5rem] w-[30rem]"
       >
         <div className="p-3 pb-0 text-[5cqi] sm:text-lg font-extrabold break-words text-right ml-8 flex flex-col">
           <span>{feedback.customerName.toUpperCase()}</span>
