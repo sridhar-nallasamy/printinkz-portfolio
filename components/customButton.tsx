@@ -9,11 +9,15 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   className,
   full,
   style,
+  handleClick,
+  disabled,
 }) => {
   return (
     <Button
       type={type}
       style={style}
+      onClick={handleClick}
+      disabled={disabled}
       className={`${className} ${full && 'w-full'} px-6 py-3 select-none text-center inline-flex items-center justify-center`}
       {...(Icon
         ? {
