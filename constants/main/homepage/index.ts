@@ -57,7 +57,7 @@ const textImageContainerListing: TextImageCardProps[] = [
     imageContent: {
       src: container03Img,
       alt: 'Product Image',
-      width: 300,
+      width: 400,
       height: 300,
     },
   },

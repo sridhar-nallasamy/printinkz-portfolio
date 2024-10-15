@@ -25,10 +25,13 @@ const TextImageContainer = ({
           src={imageContent.src}
           alt={imageContent.alt}
           className={`relative ${id == 'container_03' ? 'rounded-lg' : ''}`} //h-[50%] w-[50%] md:h-full md:w-full
-          layout="fill"
           objectFit="cover"
-          //height={imageContent.height}
-          //width={imageContent.width}
+          {...(imageContent.height
+            ? { height: imageContent.height }
+            : { layout: 'fill' })}
+          {...(imageContent.width
+            ? { width: imageContent.width }
+            : { layout: 'fill' })}
         />
       </div>
     </div>
