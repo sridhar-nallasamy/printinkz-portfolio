@@ -26,12 +26,12 @@ const CustomInput: React.FC<CustomInputProps> = ({
             xs={6}
             sm={6}
             md={9}
-            className={`text-gray-500 font-bold mb-1 md:mb-0 px-4 flex justify-start`}
+            className={`text-gray-500 font-bold mb-1 md:mb-0 flex justify-start`}
           >
             {label}
             {info && (
               <CustomToolTip title={info}>
-                <InfoRoundedIcon />
+                <InfoRoundedIcon className="ml-2" />
               </CustomToolTip>
             )}
           </Grid>

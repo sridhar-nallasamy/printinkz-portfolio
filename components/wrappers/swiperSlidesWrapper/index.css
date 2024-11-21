@@ -1,0 +1,27 @@
+.swiper-container {
+  padding: 2rem 0;
+  position: relative;
+}
+
+.swiper-slide {
+  width: 40% !important;
+  height: 40% !important;
+}
+
+@media (max-width: 600px) {
+  .swiper-slide {
+    width: 70% !important;
+    height: 70% !important;
+  }
+}
+
+@media (max-width: 1020px) {
+  .swiper-slide {
+    width: 40% !important;
+    height: 40% !important;
+  }
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+  background: #00774d;
+}

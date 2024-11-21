@@ -22,7 +22,10 @@ const TextCard: React.FC<TextCardProps> = ({
           {subTitle}
         </Typography>
       )}
-      <Typography variant="h2" id={`${id}_title`} className="font-extrabold">
+      <Typography
+        id={`${id}_title`}
+        className="text-5xl lg:text-6xl font-extrabold"
+      >
         {title}
       </Typography>
       <Typography variant="body1" id={`${id}_content`} className="text-2xl">

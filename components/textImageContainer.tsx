@@ -19,7 +19,7 @@ const TextImageContainer = ({
       />
       <div
         id={`${id}_image}`}
-        className="md:w-[50%] w-full flex items-center justify-center relative"
+        className="md:w-[50%] w-full flex items-center justify-center relative p-7"
       >
         <Image
           src={imageContent.src}

@@ -5,6 +5,7 @@ import {
   FC,
   FocusEvent,
   ReactElement,
+  ReactNode,
   SVGAttributes,
 } from 'react';
 import { ImageProps, StaticImageData } from 'next/image';
@@ -84,17 +85,27 @@ export type ImageFrameProps = {
   style?: string;
 };
 
+export type PricingDetailsProps = {
+  actualPrice: number;
+  tax: number;
+  printingCost: number;
+};
+
 export type ProductProps = {
   id: string;
   type: 'T-Shirts' | 'Mugs' | 'Posters' | 'PhoneCases';
   title: string;
-  price: number;
+  pricingDetails: PricingDetailsProps;
   images: ImageListProps[];
   onSale?: boolean;
   isAvailable?: boolean;
   colors?: Array<string>;
   sizes?: Array<string>;
   customizable?: boolean;
+};
+
+export type RevenueCalculatorFormProps = {
+  productPrice: PricingDetailsProps;
 };
 
 export type ImageListProps = {
@@ -107,7 +118,18 @@ export type ImageListNavigatorProps = {
 };
 
 export type PrototypeComponentProps = {
-  product: ProductProps[];
+  product: ProductProps;
+  onNavigate: Function;
+};
+
+export type ProductCategoryCardProps = {
+  data: ProductProps;
+  index: number;
+};
+
+export type SwiperSliderWrapperComponentProps = {
+  sliderContent: ProductProps[];
+  sliderComponent: React.ComponentType<any>;
 };
 
 export type CustomerProps = {
