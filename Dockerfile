@@ -1,4 +1,9 @@
-FROM node:21-alpine AS base
+FROM node:22-alpine AS base
+
+## Enabling PNPM
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
 
 # Install dependencies only when needed
 FROM base AS deps
@@ -8,8 +13,8 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 # Install dependencies based on the preferred package manager
-COPY package.json yarn.lock* ./
-RUN yarn --frozen-lockfile
+COPY package.json pnpm-lock.yaml* ./
+RUN pnpm i --frozen-lockfile
 
 # Rebuild the source code only when needed
 FROM base AS builder
@@ -20,15 +25,8 @@ COPY . .
 # To disable NextJs telemetry during the build.
 ENV NEXT_TELEMETRY_DISABLED 1
 
-# Receiving Arguments
-# ARG CLIENT_VAR
-# ARG SERVER_VAR
-# Setting up the Environment variables
-# ENV NEXT_PUBLIC_CLIENT_VAR=${CLIENT_VAR}
-# ENV SERVER_VAR=${SERVER_VAR}
-
 # Building the app
-RUN yarn run build
+RUN pnpm build
 
 # Production image, copy all the files and run next
 FROM base AS runner
