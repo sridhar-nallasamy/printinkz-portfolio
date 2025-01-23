@@ -11,8 +11,8 @@ jobs:
       contents: read
     with:
       ref: ${{ github.ref }}
-      artifact-rep: ${{ vars.ARTIFACT_REPO_MAIN }}
-      run-service-name: 'main-app'
+      artifact-rep: ${{ vars['ARTIFACT_REPO_PROD'] }}
+      run-service-name: 'portfolio-prod'
     secrets:
-      wif-provider: ${{ secrets.WIF_PROVIDER_MAIN }}
-      wif-sa: ${{ secrets.WIF_SA_MAIN }}
+      wif-provider: ${{ secrets['WIF_PROVIDER_PROD'] }}
+      wif-sa: ${{ secrets['WIF_SA_PROD'] }}
