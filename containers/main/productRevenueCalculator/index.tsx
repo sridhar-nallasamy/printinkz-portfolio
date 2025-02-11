@@ -44,7 +44,7 @@ const ProductRevenueCalculator = () => {
             width={70}
             height={70}
             onClick={() => handleActiveState(index)}
-            className={`rounded-md ${index === activeIndex ? 'pb-1 border-4 border-b-[#00774D]' : 'hover:scale-105 hover:cursor-pointer'} `}
+            className={`rounded-md pb-1 border-4 ${index === activeIndex ? 'border-b-[#00774D]' : 'border-b-[#313131] hover:scale-105 hover:cursor-pointer'}`}
           />
         </ImageListItem>
       )),
@@ -70,7 +70,12 @@ const ProductRevenueCalculator = () => {
             product={activeProduct}
             onNavigate={handleNavigation}
           />
-          <ImageList cols={protoProducts.length} rowHeight={70} className="p-2">
+          <ImageList
+            cols={protoProducts.length}
+            rowHeight={70}
+            className="p-2"
+            gap={10}
+          >
             {imageList}
           </ImageList>
         </div>
