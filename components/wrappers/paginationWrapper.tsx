@@ -1,6 +1,6 @@
 import { paginationWrapperProps } from '@/types/components';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import { IconButton } from '@mui/material';
+import { Grid2, IconButton } from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 const PaginationWrapper: React.FC<paginationWrapperProps> = ({
@@ -14,10 +14,7 @@ const PaginationWrapper: React.FC<paginationWrapperProps> = ({
 
   // Handlers for next and previous buttons
   function handleNavigation(handlingIndex: number) {
-    handleCurrentPage(
-      (prevIndex) =>
-        (prevIndex + handlingIndex + totalContents) % totalContents,
-    );
+    handleCurrentPage((prevIndex) => prevIndex + handlingIndex);
   }
 
   // Dot pagination handler
@@ -28,10 +25,12 @@ const PaginationWrapper: React.FC<paginationWrapperProps> = ({
   return (
     <>
       {/* contents Section */}
-      {children}
+      <Grid2 container spacing={{ xs: 2, md: 3 }}>
+        {children}
+      </Grid2>
 
       {/* Pagination Section */}
-      <div className="flex items-center justify-center mt-4 space-x-5">
+      <div className="flex items-center justify-center mt-10 space-x-5">
         <IconButton
           disabled={activePage === 1}
           onClick={() => handleNavigation(-1)}

@@ -1,15 +1,15 @@
 import { FeedbackComponentProps } from '@/types/components';
-import { Avatar } from '@mui/material';
+import { Avatar, Grid2 } from '@mui/material';
 import StarRating from './starRating';
 import { stringAvatar } from './utils';
 
 const FeedbackCard: React.FC<FeedbackComponentProps> = ({ feedback }) => {
   return (
-    <div className="relative">
+    <Grid2 size={{ xs: 12, md: 6, lg: 4 }} className="relative">
       <Avatar {...stringAvatar(feedback.customerName)} />
       <div
         id={`customer_feedback`}
-        className="p-5 border-2 border-black rounded-full flex flex-col h-[12.5rem] w-[30rem]"
+        className="p-5 border-2 border-black rounded-full flex flex-col h-[12.5rem]"
       >
         <div className="p-3 pb-0 text-[5cqi] sm:text-lg font-extrabold break-words text-right ml-8 flex flex-col">
           <span>{feedback.customerName.toUpperCase()}</span>
@@ -26,7 +26,7 @@ const FeedbackCard: React.FC<FeedbackComponentProps> = ({ feedback }) => {
           )}
         </div>
       </div>
-    </div>
+    </Grid2>
   );
 };
 
