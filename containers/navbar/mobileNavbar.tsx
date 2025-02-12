@@ -14,14 +14,14 @@ const MobileNavbar = () => {
     <div
       className={`w-full h-full lg:hidden transition-all duration-300 ${
         isMenuOpen ? 'max-h-full opacity-100 py-2 ' : 'max-h-0 opacity-0'
-      } flex flex-col justify-evenly items-center`}
+      } flex flex-col justify-center items-center`}
     >
       {navbarContents.map((item) => (
         <Link
           href={item.url}
           onClick={() => dispatch(toggleNavbarState())}
           key={`navbar_${item.title}`}
-          className={`inline-block text-xl hover:font-extrabold hover:text-[#00774D]`}
+          className={`inline-block text-xl hover:font-extrabold hover:text-[#00774D] p-5 border-b-2 border-black`}
           //style={{ '--delay': i * 0.25 + 's' }}
         >
           {item.title}
